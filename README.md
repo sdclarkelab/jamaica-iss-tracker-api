@@ -1,2 +1,2 @@
 # jam-iss-tracker
-Jamaica International Space Station (ISS) tracker API
+Jamaica International Space Station (ISS) sightings API
