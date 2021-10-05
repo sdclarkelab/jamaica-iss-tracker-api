@@ -35,7 +35,3 @@ async def sightings(country: str = 'Jamaica', region: str = 'None', city_names: 
         "cities": city_sightings,
         "reference_link": "https://spotthestation.nasa.gov/"
     }
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
-

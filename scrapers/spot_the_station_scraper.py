@@ -8,7 +8,6 @@ def get_spot_the_station_data(url):
     :return:
     """
     sighting_info = {}
-    # url = f'https://spotthestation.nasa.gov/sightings/view.cfm?country=Jamaica&region=None&city={location}'
     soup = utils.get_soup(url, 3)
 
     sighting_info['sighting_period'] = _extract_sighting_period(soup)
