@@ -6,6 +6,7 @@ click==8.0.1
 colorama==0.4.4
 coloredlogs==15.0.1
 fastapi==0.68.1
+gunicorn==20.1.0
 h11==0.12.0
 httptools==0.2.0
 humanfriendly==10.0
