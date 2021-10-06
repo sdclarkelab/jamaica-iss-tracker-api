@@ -1,16 +1,14 @@
-import os
-import uvicorn
 from urllib.parse import urljoin, urlencode
 from fastapi import FastAPI
 
 import scrapers.spot_the_station_scraper as spot_the_station_scraper
 
 app = FastAPI()
+SPOT_THE_STATION_URL = 'https://spotthestation.nasa.gov/sightings/view.cfm'
 
 
-@app.get("/api/v1/iss/sightings/")
+@app.get("/api/v1/iss/sightings")
 async def sightings(country: str = 'Jamaica', region: str = 'None', city_names: str = 'Kingston,Montego_Bay'):
-
     city_sightings = list()
     city_urls = list()
 
@@ -19,8 +17,7 @@ async def sightings(country: str = 'Jamaica', region: str = 'None', city_names: 
 
         for city_name in city_names:
             query = "?" + urlencode(dict(country=country, region=region, city=city_name))
-            base_url = os.getenv("SPOT_THE_STATION_URL")
-            spot_the_station_url = urljoin(base_url, query)
+            spot_the_station_url = urljoin(SPOT_THE_STATION_URL, query)
 
             city_urls.append(dict(city=city_name, url=spot_the_station_url))
 
@@ -33,5 +30,5 @@ async def sightings(country: str = 'Jamaica', region: str = 'None', city_names: 
     return {
         "country_name": country,
         "cities": city_sightings,
-        "reference_link": "https://spotthestation.nasa.gov/"
+        "reference_url": "https://spotthestation.nasa.gov/"
     }

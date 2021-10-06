@@ -7,13 +7,14 @@ def get_spot_the_station_data(url):
     :param url:
     :return:
     """
-    sighting_info = {}
+
     soup = utils.get_soup(url, 3)
 
-    sighting_info['sighting_period'] = _extract_sighting_period(soup)
-    sighting_info['sighting_dates'] = _extract_sighting_dates(soup)
-
-    return sighting_info
+    return {
+        'sighting_period': _extract_sighting_period(soup),
+        'sighting_dates': _extract_sighting_dates(soup),
+        'url': url
+    }
 
 
 def _extract_sighting_period(soup):
