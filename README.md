@@ -1,4 +1,4 @@
-# jam-iss-tracker
+# jamaica-iss-tracker-api
 
 This API https://jam-iss-tracker.herokuapp.com/api/v1/iss/sightings shows the International Space Station (ISS) sightings dates and times in Jamaica cities (Kingston, Montego Bay) by default.
 
