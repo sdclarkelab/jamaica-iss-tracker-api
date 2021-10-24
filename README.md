@@ -9,6 +9,9 @@ $ pip install -r requirements.txt
 $ uvicorn main:app --reload
 ```
 
+## Documentation
+See https://jam-iss-tracker.herokuapp.com/docs for API documentation.
+
 ## Query Format
 To filter on other countries use the following query parameters:
 * country
